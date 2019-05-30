@@ -19,6 +19,9 @@
 *.tar.gz
 *.rar
 
+# maven ignore
+target/
+
 ### STS ###
 .apt_generated
 .classpath
@@ -33,6 +36,14 @@
 *.iws
 *.iml
 *.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

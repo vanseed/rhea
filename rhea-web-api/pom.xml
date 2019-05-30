@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>rhea-web-api</artifactId>
+	<packaging>jar</packaging>
+	<name>Rhea : Web : API</name>
+	<description>Rhea Web API Project</description>
+
+	<parent>
+  		<groupId>com.vanseed.rhea</groupId>
+  		<artifactId>rhea</artifactId>
+  		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>       
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		 -->
+		
+		<!-- http://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
+		<!--
+		<dependency>
+            <groupId>org.apache.shiro</groupId>  
+            <artifactId>shiro-spring</artifactId>  
+            <version>1.3.2</version>  
+        </dependency>
+        -->
+        
+		<!-- https://mvnrepository.com/artifact/org.crazycake/shiro-redis -->
+		<!--
+		<dependency>
+    		<groupId>org.crazycake</groupId>
+    		<artifactId>shiro-redis</artifactId>
+    		<version>2.8.24</version>
+		</dependency>
+		-->
+		
+		<!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha -->
+		<dependency>
+    		<groupId>com.github.penggle</groupId>
+    		<artifactId>kaptcha</artifactId>
+    		<version>2.3.2</version>
+		</dependency>
+		
+		
+		
+		 
+		<dependency>	
+			<groupId>com.vanseed.rhea</groupId>
+			<artifactId>rhea-domain</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>	
+			<groupId>com.vanseed.rhea</groupId>
+			<artifactId>rhea-common</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>	
+			<groupId>com.vanseed.rhea</groupId>
+			<artifactId>rhea-service</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- compile plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<!-- source attach plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- springboot maven plugin -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<dependencies>    <!-- 修改代码后自动生效，Reload Java classes without restarting the container -->  
+	                <dependency>  
+	                    <groupId>org.springframework</groupId>  
+	                    <artifactId>springloaded</artifactId>  
+	                    <version>1.2.8.RELEASE</version>  
+	                </dependency>  
+            	</dependencies> 
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

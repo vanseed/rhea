@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vanseed.rhea.domain.mybatis.UserMapper">
+	<!-- 
+	<resultMap id="StockResultMap" type="com.bluerabbit.woke.core.model.mall.MallStock" >
+		<id column="id" property="id" jdbcType="BIGINT" />
+	    <result column="product_id" property="productId" jdbcType="BIGINT" />
+	    <result column="item_id" property="itemId" jdbcType="BIGINT" />
+	    <result column="quantity" property="quantity" jdbcType="INTEGER" />
+	    <result column="stock_type" property="stockType" jdbcType="INTEGER" />
+	    <result column="serial_number" property="serialNumber" jdbcType="VARCHAR" />
+	    <result column="exchange_info" property="exchangeInfo" jdbcType="VARCHAR" />
+	    <result column="create_time" property="createTime" jdbcType="DATE" />
+	    <result column="create_id" property="createId" jdbcType="BIGINT" />
+	    <result column="update_time" property="updateTime" jdbcType="DATE" />
+	    <result column="update_id" property="updateId" jdbcType="BIGINT" />
+	</resultMap>
+	 -->
+	
+	<select id="findByMobile" resultType="com.vanseed.rhea.domain.model.User" >
+		SELECT * 
+		FROM 
+			IW_USER u
+		WHERE 1=1
+			<if test="mobile != null">
+				AND u.mobile = #{mobile}
+			</if>
+			<if test="userStatus != null">
+				AND u.user_status = #{userStatus}
+			</if>
+	</select>
+</mapper>

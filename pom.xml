@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.vanseed.rhea</groupId>
+	<artifactId>rhea</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Rhea : parent</name>
+	<description>Rhea Parent Project</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<!-- 主要依赖库的版本定义 -->
+		<spring.version>5.1.5.RELEASE</spring.version>
+		<springboot.version>2.1.4.RELEASE</springboot.version>
+		<springboot.mybatis.version>2.0.1</springboot.mybatis.version>
+		<mysql.version>5.1.46</mysql.version>
+		<druid.version>1.1.10</druid.version>
+		<guava.version>24.0-jre</guava.version>
+		<jackson.version>2.9.8</jackson.version>
+		<httpclient.version>4.5.8</httpclient.version>
+		<joda-time.version>2.10.1</joda-time.version>
+
+		<!-- staurn版本定义 -->
+		<saturn.version>1.0.0-SNAPSHOT</saturn.version>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+	
+	<!-- 预定义依赖项的version,scope与exclusions,子项目中只需定义groupId 与  artifactId 即可 -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>		
+		</dependencies>
+	</dependencyManagement>
+	
+	<!-- 定义依赖,子项目默认继承 -->
+	<dependencies>
+				
+	</dependencies>
+	
+	<!-- 子项目 -->
+	<modules>
+		<module>rhea-common</module>
+		<module>rhea-domain</module>
+		<module>rhea-service</module>	
+		<module>rhea-web-api</module>
+		<module>rhea-web-oss</module>
+	</modules>
+	
+	<!-- spring milestones仓库 -->
+	<repositories>
+	    <repository>
+			<id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+	    </repository>
+	</repositories>
+
+</project>
